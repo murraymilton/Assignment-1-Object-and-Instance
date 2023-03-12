@@ -17,8 +17,24 @@ public class Weight {
         }
     }
 
-    public double toOunces(){
-      double poundsToOunces = pounds * 16;
-      return poundsToOunces;
+    private double toOunces(){
+      return pounds * 16;
+    }
+    private void normalize(){
+        if(toOunces() < Weight.OUNCES_IN_A_POUND ) System.out.println("Under ounces in a pound");
+        else throw new IllegalArgumentException("The converted ounces cannot be greater than the number of" +
+                " ounces in a pound.");
+    }
+
+    public boolean lessThan(Weight weight){
+        return true; //Working on implementation
+    }
+
+    public void addTo(Weight weight){
+        //implementation
+    }
+
+    public String toString(){
+        return "1"; // Working on implementation.
     }
 }
