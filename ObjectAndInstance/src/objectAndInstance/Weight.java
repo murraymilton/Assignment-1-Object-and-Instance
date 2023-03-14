@@ -2,72 +2,65 @@ package objectAndInstance;
 
 public class Weight {
     /**
-     * Instance Variable Declaration
+     * Instance variables
+     * constant --> OUNCES_IN_POUNDS initialized to 16 for converting ounces to pounds
      */
     private final double OUNCES_IN_A_POUND = 16;
     private int pounds;
     private double ounces;
 
+    /**
+     * The default constructor of initialize the instances of each object.
+     * @param pounds
+     * @param ounces
+     */
 
-    //Construtor
     public Weight(int pounds, double ounces){
         this.pounds = pounds;
         this.ounces = ounces;
-
     }
 
-    
 
-    //Instance Methods
+    /**
+     *
+     * @return returning the converted number of pounds to ounces
+     */
     public double toOunces(){
-        return pounds * OUNCES_IN_A_POUND;
+        return pounds * OUNCES_IN_A_POUND + ounces;
     }
 
-    public void normalize(){
-      while(toOunces() > OUNCES_IN_A_POUND){
-          ounces -= OUNCES_IN_A_POUND;
-          pounds++;
-      }
-
+    // Method for validating the number of ounces is less than the number of ounces in a pound.
+    private void normalize(){
+        while(ounces > OUNCES_IN_A_POUND){
+            ounces -= 16;
+            pounds++;
+        }
     }
 
+    /**
+     * Boolean method for evaluating that the pounds are greater than ounces
+     */
 
+    public boolean lessThan(Weight weight){
+        if(weight.pounds < weight.ounces) {
+            return true;
+        }
+        else if(weight.pounds > weight.ounces) {
+
+        }return false;
+    }
 
     public void addTo(Weight weight){
-        if(weight.toOunces() < OUNCES_IN_A_POUND){
-            this.ounces = toOunces();
-            this.pounds = pounds;
-        }else  throw new IllegalArgumentException("Converted ounces greater than "
-                + OUNCES_IN_A_POUND);
+        this.pounds = weight.pounds;
+        this.ounces = weight.ounces;
+
+        normalize();
 
     }
 
-
-    //Accessor and Mutator Methods
-    public double getOUNCES_IN_A_POUND() {
-        return OUNCES_IN_A_POUND;
-    }
-
-    public int getPounds() {
-        return pounds;
-    }
-
-    public void setPounds(int pounds) {
-        this.pounds = pounds;
-    }
-
-    public double getOunces() {
-        return ounces;
-    }
-
-    public void setOunces(double ounces) {
-        this.ounces = ounces;
-    }
-
-
-    //toString() --> for return a string representation of the object instance.
-
+    // Creating a toString() method for representing each object of the instance of each object.
     public String toString(){
-      return "x:" + pounds + " and " + " y:" + ounces;
+        return " Pounds:" + pounds + " Ounces:" + ounces;
     }
 }
+
