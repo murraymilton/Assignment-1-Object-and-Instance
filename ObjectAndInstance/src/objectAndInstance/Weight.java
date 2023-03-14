@@ -4,37 +4,45 @@ public class Weight {
     /**
      * Instance Variable Declaration
      */
-    private final double OUNCES_IN_A_POUND = 16; 
+    private final double OUNCES_IN_A_POUND = 16;
     private int pounds;
     private double ounces;
 
 
     //Construtor
-    public Weight(int pounds){
+    public Weight(int pounds, double ounces){
         this.pounds = pounds;
         this.ounces = ounces;
+
     }
+
+    
 
     //Instance Methods
     public double toOunces(){
-        return this.pounds * OUNCES_IN_A_POUND;
+        return pounds * OUNCES_IN_A_POUND;
     }
 
     public void normalize(){
-        if(toOunces() > OUNCES_IN_A_POUND){
-            throw new IllegalArgumentException("Error: The converted Ounces are greater than ounces per pound.");
-        }else
-             this.ounces = toOunces();
+      while(toOunces() > OUNCES_IN_A_POUND){
+          ounces -= OUNCES_IN_A_POUND;
+          pounds++;
+      }
 
     }
 
-    public boolean lessThan(Weight weight){
-        if(weight.ounces > OUNCES_IN_A_POUND){
-            return false;
-        }else return true;
+
+
+    public void addTo(Weight weight){
+        if(weight.toOunces() < OUNCES_IN_A_POUND){
+            this.ounces = toOunces();
+            this.pounds = pounds;
+        }else  throw new IllegalArgumentException("Converted ounces greater than "
+                + OUNCES_IN_A_POUND);
+
     }
 
-    public void addTo(Weight weight){}
+
     //Accessor and Mutator Methods
     public double getOUNCES_IN_A_POUND() {
         return OUNCES_IN_A_POUND;
@@ -57,7 +65,7 @@ public class Weight {
     }
 
 
-
+    //toString() --> for return a string representation of the object instance.
 
     public String toString(){
       return "x:" + pounds + " and " + " y:" + ounces;
