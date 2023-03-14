@@ -1,40 +1,65 @@
 package objectAndInstance;
 
 public class Weight {
-    private static final double OUNCES_IN_A_POUND = 16;
+    /**
+     * Instance Variable Declaration
+     */
+    private final double OUNCES_IN_A_POUND = 16; // Class static constant variable
     private int pounds;
     private double ounces;
 
 
-    //Constructor
-    public Weight (int pounds, double ounces){
-        if(pounds <= 0 || ounces <= 0){
-            throw new IllegalArgumentException("Neither pounds nor ounces can be less" +
-                    " or equal to 0 ");
-        }else {
-            this.pounds = pounds;
-            this.ounces = ounces;
-        }
+    //Construtor
+    public Weight(int pounds){
+        this.pounds = pounds;
+        this.ounces = ounces;
     }
 
-    private double toOunces(){
-      return pounds * 16;
+    //Instance Methods
+    public double toOunces(){
+        return this.pounds * OUNCES_IN_A_POUND;
     }
-    private void normalize(){
-        if(toOunces() < Weight.OUNCES_IN_A_POUND ) System.out.println("Under ounces in a pound");
-        else throw new IllegalArgumentException("The converted ounces cannot be greater than the number of" +
-                " ounces in a pound.");
+
+    public void normalize(){
+        if(toOunces() > OUNCES_IN_A_POUND){
+            throw new IllegalArgumentException("Error: The converted Ounces are greater than ounces per pound.");
+        }else
+             this.ounces = toOunces();
+
     }
 
     public boolean lessThan(Weight weight){
-        return true; //Working on implementation
+        if(weight.ounces > OUNCES_IN_A_POUND){
+            return false;
+        }else return true;
     }
 
-    public void addTo(Weight weight){
-        //implementation
+    public void addTo(Weight weight){}
+    //Accessor and Mutator Methods
+    public double getOUNCES_IN_A_POUND() {
+        return OUNCES_IN_A_POUND;
     }
+
+    public int getPounds() {
+        return pounds;
+    }
+
+    public void setPounds(int pounds) {
+        this.pounds = pounds;
+    }
+
+    public double getOunces() {
+        return ounces;
+    }
+
+    public void setOunces(double ounces) {
+        this.ounces = ounces;
+    }
+
+
+
 
     public String toString(){
-        return "1"; // Working on implementation.
+      return "x:" + pounds + " and " + " y:" + ounces;
     }
 }

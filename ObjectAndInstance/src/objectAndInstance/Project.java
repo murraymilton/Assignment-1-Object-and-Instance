@@ -3,9 +3,10 @@ package objectAndInstance;
 import java.util.ArrayList;
 
 public class Project {
-    ArrayList<Weight> list;
-   public  Project() {
-       list = new ArrayList<Weight>(); // creates new instance of the listed Weights
-   }
 
+
+   public static void main(String[]args){
+       Weight w1 = new Weight(1);
+       System.out.println(w1.toOunces());
+   }
 }
