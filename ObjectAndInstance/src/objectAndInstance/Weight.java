@@ -4,7 +4,7 @@ public class Weight {
     /**
      * Instance Variable Declaration
      */
-    private final double OUNCES_IN_A_POUND = 16; // Class static constant variable
+    private final double OUNCES_IN_A_POUND = 16; 
     private int pounds;
     private double ounces;
 
