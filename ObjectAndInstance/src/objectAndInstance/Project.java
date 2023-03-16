@@ -13,13 +13,6 @@ public class Project {
      */
 
 
-    // Validate the initialized instance of the Weight object for value assignment
-    private Weight validateObject(Weight weight1, Weight weight2, Weight weight3){
-        if(weight1 == null || weight2 == null || weight3 == null){
-
-        }
-        throw new IllegalArgumentException("The object instances of the Weight value cannot be initialized to null");
-    }
 
     //Invoking the lessThan method for
 
