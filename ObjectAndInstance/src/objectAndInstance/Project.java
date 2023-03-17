@@ -14,10 +14,11 @@ public class Project {
 
 
 
-    //Invoking the lessThan method for
+    //Invoking the lessThan method to compare each instantiation of the set object
 
     private Weight findMinimum(Weight weight1, Weight weight2, Weight weight3){
         if(weight1.lessThan(weight2) && weight1.lessThan(weight3)){
+
             return weight1;
         } else if (weight2.lessThan(weight1) && weight2.lessThan(weight3)) {
             return weight2;
@@ -40,9 +41,17 @@ public class Project {
     }
     // Calculate the average
     private Weight findAverage(Weight weight1, Weight weight2, Weight weight3){
-        return null; // Working on implementation logic 
+        return null;
     }
-    private static void main(String[]args){
+    public static void main(String[]args){
+        Weight weight1 = new Weight(11, 3);
+        Weight weight2 = new Weight(7, 20); // Hint: normalize method should be used to translate into 8 pounds and 4 ounces
+        Weight weight3 = new Weight(10, 6);
 
+        // Test output of the weight objects
+        System.out.println("Weight 1: " +  weight1.toString());
+        System.out.println("Weight 2: " + weight2.toString());
+        System.out.println("Weight 3: " + weight3.toString());
     }
+
 }

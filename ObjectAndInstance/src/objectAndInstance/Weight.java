@@ -16,8 +16,12 @@ public class Weight {
      */
 
     public Weight(int pounds, double ounces){
+        //implementation ----> Validating the
+
         this.pounds = pounds;
         this.ounces = ounces;
+        // Checking the initialized values of a 
+        normalize();
     }
 
 
