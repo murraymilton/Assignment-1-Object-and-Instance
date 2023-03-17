@@ -36,8 +36,13 @@ public class Project {
 
         }
         return weight3;
+
+    }
+    // Calculate the average
+    private Weight findAverage(Weight weight1, Weight weight2, Weight weight3){
+        return null; // Working on implementation logic 
     }
     private static void main(String[]args){
-        
+
     }
 }
