@@ -18,7 +18,6 @@ public class Project {
 
     private Weight findMinimum(Weight weight1, Weight weight2, Weight weight3){
         if(weight1.lessThan(weight2) && weight1.lessThan(weight3)){
-
             return weight1;
         } else if (weight2.lessThan(weight1) && weight2.lessThan(weight3)) {
             return weight2;
