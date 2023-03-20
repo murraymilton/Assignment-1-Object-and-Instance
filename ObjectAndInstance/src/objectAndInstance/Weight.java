@@ -21,7 +21,7 @@ public class Weight {
         this.pounds = pounds;
         this.ounces = ounces;
         // Checking the initialized values of a 
-        normalize();
+        normalize(); // Passing
     }
 
 
@@ -62,9 +62,19 @@ public class Weight {
 
     }
 
+    public void weightAverage(int w){
+        ounces = toOunces();
+
+        pounds = 0;
+
+        ounces = ounces / w;
+
+        normalize();
+    }
+
     // Creating a toString() method for representing each object of the instance of each object.
     public String toString(){
-        return " Pounds:" + pounds + " Ounces:" + ounces;
+        return " Pounds:" + pounds + String.format("%.2f", ounces) + " oz";
     }
 }
 

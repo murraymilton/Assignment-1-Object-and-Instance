@@ -29,7 +29,7 @@ public class Project {
 
     private Weight findMaximum(Weight weight1, Weight weight2, Weight weight3){
         if(weight2.lessThan(weight1) && weight3.lessThan(weight1)){
-            return weight1;
+            return   weight1;
         } else if (weight1.lessThan(weight2) && weight3.lessThan(weight2)) {
             return weight2;
         } else if (weight1.lessThan(weight3) && weight2.lessThan(weight3)) {
@@ -40,7 +40,17 @@ public class Project {
     }
     // Calculate the average
     private Weight findAverage(Weight weight1, Weight weight2, Weight weight3){
-        return null;
+        ArrayList<Weight> weights = new ArrayList<>();
+        // Adding the instance objects to the array List
+        weights.add( weight1);
+        weights.add( weight2);
+        weights.add( weight3);
+
+        for(Weight weight : weights){
+           weight.weightAverage(weight1., weight2, weight3);
+        }
+
+        return weight1;
     }
     public static void main(String[]args){
         Weight weight1 = new Weight(11, 3);
@@ -50,7 +60,6 @@ public class Project {
         // Test output of the weight objects
         System.out.println("Weight 1: " +  weight1.toString());
         System.out.println("Weight 2: " + weight2.toString());
-        System.out.println("Weight 3: " + weight3.toString());
     }
 
 }
